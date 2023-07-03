@@ -22,6 +22,8 @@ jobs:
           python train.py
 
       - name: gen repo
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cat metrics.txt >> report.md
           echo "![](./plot.png)" >> report.md
